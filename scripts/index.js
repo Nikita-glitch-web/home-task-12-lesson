@@ -23,7 +23,7 @@ const alertBtn = (
   size = 550,
   border = 1,
   borderColor = "green",
-  bgColor = "green"   
+  bgColor = "black"   
 ) => {
   const switcher = document.createElement("div");
 
