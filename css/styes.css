@@ -20,4 +20,43 @@
   transform: translateY(0);
 }
 
+.clicked__btn {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+.clicked__btn > .climbing-element {
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+.container {
+  position: absolute;
+}
+
+.button__tooltip {
+  position: relative;
+  top: 50%;
+  width: 300px;
+  background: red;
+}
+
+.climbing-element {
+  display: none;
+  width: 210px;
+  height: 90px;
+  border: 3px solid yellow;
+  background: blue;
+  border-radius: 26%;
+  text-align: center;
+  transition: all 1.2s;
+  font-family: "Trispace", sans-serif;
+  color: white;
+  padding-top: 40px;
+  font-size: 28px;
+}
+
 /*# sourceMappingURL=styes.css.map */
