@@ -1,63 +1,59 @@
-const createBtn = (
+
+const body = document.querySelector('body');
+
+const tooltip = (
   root,
-  size = 300,
-  border = 1,
+  size = 120,
+  border = 10, 
   borderColor = "green",
-  bgColor = "yellow"   
+  bgColor = "black",
+  position = 'relative',
+  marginLeft = 'auto',
+  marginRight = 'auto'  
 ) => {
-  const bthWithSlider = document.createElement("div");
+  const container = document.createElement('div')
 
-  const body = document.querySelector("body");
-  bthWithSlider.style.borderRadius = "80%";
-  bthWithSlider.style.width = `${size}px`;
-  bthWithSlider.style.height = `${size}px`;
-  bthWithSlider.style.border = `${border}px solid ${borderColor}`;
-  bthWithSlider.style.background = `${bgColor}`;
-  root.append(bthWithSlider);
-  bthWithSlider.classList.add('author');
-};
-
-
-const alertBtn = (
-  root,
-  size = 550,
-  border = 1,
-  borderColor = "green",
-  bgColor = "black"   
-) => {
-  const switcher = document.createElement("div");
-
-  const body = document.querySelector("body");
-  switcher.style.borderRadius = "20%";
-  switcher.style.width = `${size}px`;
-  switcher.style.height = `${size}px`;
-  switcher.style.border = `${border}px solid ${borderColor}`;
-  switcher.style.background = `${bgColor}`;
-  root.append(bthWithSlider);
-  //switcher.classList.add('author');
-};
+  const createBtn = () => {
+    const switcher = document.createElement("div");
+    switcher.style.borderRadius = "50%";
+    switcher.style.width = `${size}px`;
+    switcher.style.height = `${size}px`;
+    switcher.style.border = `${border}px solid ${borderColor}`;
+    switcher.style.background = `${bgColor}`;
+    switcher.style.position = `${position}`;
+    switcher.style.marginLeft = `${marginLeft}`,
+    switcher.style.marginRight = `${marginRight}`
 
 
-
-
-classForAlertBtn = function () {
-    if (htmlBtnPart === clicked) {
-      switcher.addEventListener('onclick', () => {
-        switcher.classList.add('clicked__btn')
-      })
-  } else {
-    switcher.classList.add('hidden__btn')
+    switcher.addEventListener('click', () => {
+      // условие если у  елемента есть класс clicked__btn то удалить если нет класса то добавить
+      //this.classList.contains('active')
+      container.classList.toggle('clicked__btn')
+    })
+    container.append(switcher)
+    
   }
-}
 
-
-function htmlBtnPart(root, imageData) {
-  const div = document.createElement('div');
-  div.innerHTML = `
-    <div class="author"><a href="${imageData.url}" target="blank">${imageData.author}</a></div>
+  const createText = () => {
+    // climbingElement.classList.add('clicked')
+    // SWITHCER НЕ HTML ЄЛЕМЕНТ НУЖНО ДРУГОЙ
+    const climbingElement = document.createElement('div');
+    climbingElement.innerHTML = `
+      Loh Nikita
     `;
-  root.append(div);
-}
+    climbingElement.classList.add('climbing-element')
+    container.append(climbingElement)
+  }
 
-createBtn(document.querySelector('body'));
-htmlBtnPart(document.querySelector('body'), {author: "Loh", url: 'http://google.com'});
+  root.append(container)
+
+  createBtn();
+  createText();
+
+
+};
+
+
+tooltip(body);
+
+
